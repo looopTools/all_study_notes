@@ -35,9 +35,19 @@ What this means is that for any input X we will always get the same output Y.
 
 *** Corner cases
 
+A corner case is a case where we may expect a function not act as we expect and we have to test what will happen in these cases.
+In the case of our add function it could be where we add a number to INT_MAX or INT_MIN or add INT_MAX with INT_MAX.
+What do we get? Do we get integer overflow, do we get INT_MAX or what will happen.
+Can we define an expectation about what will happen.
+It is very beneficial if we can.
 
+Additionally for corner cases it is extremely important that \texttt(add(N)) \equiv \texttt(add(N)) otherwise we cannot say that the function is correct.
 
 *** Pit falls of Unit Test
+
+Here we will briefly discuss corner cases of Unit Testing
+
+**** Over testing 
 
 *** Test of Functions with side effects
 
