@@ -1,0 +1,6 @@
+
+* GNU Stow
+
+* Ansible
+
+- configure ansible to setup linux and mac 

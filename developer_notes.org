@@ -1,0 +1,68 @@
+#+TITLE: Developer Study Notes
+#+AUTHOR: Lars Nielsen
+
+* Debugging
+
+*** Tools for Debugging
+
+- lldb
+- gdb
+- valgrind
+
+* Testing
+
+This chapter covers the subject testing.
+From the smallest type of test and upwards
+
+** Unit Test
+
+A unit test is a general term from object oriented programming where the smallest unit (a class method) is being tested.
+However, it can also be beneficial in imperative and functional programming to utilise unit testing to validate the correct of a function.
+
+The purpose of a unit test is to assert the correctness of a function, i.e. with input X do we get expected output Y.
+
+*** Correctness
+
+When we are talking about correct it means that we have an expectation of what the function should return given a specific set of parameters.
+Let us say we have a function \texttt{add} which takes a series of numbers N.
+Then we expect that \texttt{add(N)}, where N = (1, 2, 3) returns 6.
+If it does then the function is correct if not the function is incorrect.
+Additionally we also expect that \texttt{add} for the same N always will return the result.
+So if we see \texttt(add(N)) \neq \texttt(add(N)) then the function is also incorrect. 
+
+In general we strive for functions to be partial functions.
+What this means is that for any input X we will always get the same output Y.
+
+*** Corner cases
+
+
+
+*** Pit falls of Unit Test
+
+*** Test of Functions with side effects
+
+*** Setup and Tear down 
+
+*** Tools for Unit Test
+
+
+** Component Test
+
+A component test, also known as module test, test and entire component is being tested in isolation.
+In general this type of tests builds on top of unit testing.
+
+The purpose of the component test is to ensure that a module works as expected before integrating it with other modules.
+
+*** Tools for Component Testing 
+
+** Integration Test
+
+** Scalability Testing
+
+* Programming Paradigms
+
+- OOP
+- Imperative
+- Funcitonal
+- DEclaritive
+- logical
