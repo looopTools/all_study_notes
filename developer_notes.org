@@ -3,7 +3,9 @@
 
 * Debugging
 
-*** Tools for Debugging
+** Tools for Debugging
+
+*** C and C++ Tools
 
 - lldb
 - gdb
@@ -36,8 +38,8 @@ What this means is that for any input X we will always get the same output Y.
 *** Corner cases
 
 A corner case is a case where we may expect a function not act as we expect and we have to test what will happen in these cases.
-In the case of our add function it could be where we add a number to INT_MAX or INT_MIN or add INT_MAX with INT_MAX.
-What do we get? Do we get integer overflow, do we get INT_MAX or what will happen.
+In the case of our add function it could be where we add a number to INT\_MAX or INT\_MIN or add INT\_MAX with INT\_MAX.
+What do we get? Do we get integer overflow, do we get INT\_MAX or what will happen.
 Can we define an expectation about what will happen.
 It is very beneficial if we can.
 
@@ -47,12 +49,12 @@ Additionally for corner cases it is extremely important that \texttt{add(N)} \eq
 
 Here we will briefly discuss corner cases of Unit Testing
 
-**** Over testing and 100% Test Coverage \neq Perfect Testing
-
+*Over testing and 100% Test Coverage \neq Perfect Testing:*
 One of the things that is common requirement from managers is 100% test coverage however, this is not always a good approach.
 For the simple reason that it can increase the size of the code base for no reason and test code that is so trivial that it is just a waste of time.
 
-As an example let us assume we have the class
+As an example let us assume we have the \texttt{Person} class below, which has \texttt{first\_name} and \texttt{last\_name} member variables, and a accessor methods and a method for getting the full name.
+It is trivial to see this code is correct and testing this would only add useless code. 
 
 #+BEGIN_SRC cpp
   class Person
@@ -71,14 +73,43 @@ As an example let us assume we have the class
 
 #+END_SRC
 
+Why is that?
+Well first of the only corner case is where either of the members are empty, but even in that case we know that the methods will work.
+We could argue that there is a corner case where the string becomes obtrusively large, but then we are having larger problems like memory consumption.
 
 *** Test of Functions with side effects
 
-*** Setup and Tear down 
+
+*** Setup and Tear Down
+
+The /setup/ and /tear down/ terms are two core terms in unit test lingo.
+
+*Setup* covers the process of preparations that happens before your tests.
+Some frameworks support a setup function per test and a global setup.
+Some only support a global setup.
+
+The setup function often prepares data necessary for a test.
+Basically it is everything you need to prepare before a test happens.
+Another example is to populate a database with test data
+
+*Tear Down* is the exact opposite of Setup.
+It remove all the data that was setup during the /setup/ process.
+
+This is to ensure that every time you run a unit test, you do so with a clean setup.
+During the tear down and example could be to drop all tables in the data base.
+
+*** Mock, Stubs, and Substitutions
 
 *** Tools for Unit Test
 
+| Tool        | Langauge | Link                                            |
+|-------------+----------+-------------------------------------------------|
+| Google Test | C++      | https://github.com/google/googletest/           |
+| RSpec       | Ruby     | https://rspec.info/                             |
+| Unittest    | Python   | https://docs.python.org/3/library/unittest.html |
 
+
+ 
 ** Component Test
 
 A component test, also known as module test, test and entire component is being tested in isolation.
