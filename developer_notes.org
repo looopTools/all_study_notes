@@ -28,7 +28,7 @@ Let us say we have a function \texttt{add} which takes a series of numbers N.
 Then we expect that \texttt{add(N)}, where N = (1, 2, 3) returns 6.
 If it does then the function is correct if not the function is incorrect.
 Additionally we also expect that \texttt{add} for the same N always will return the result.
-So if we see \texttt(add(N)) \neq \texttt(add(N)) then the function is also incorrect. 
+So if we see \texttt{add(N)} \neq \texttt{add(N)} then the function is also incorrect. 
 
 In general we strive for functions to be partial functions.
 What this means is that for any input X we will always get the same output Y.
@@ -41,13 +41,36 @@ What do we get? Do we get integer overflow, do we get INT_MAX or what will happe
 Can we define an expectation about what will happen.
 It is very beneficial if we can.
 
-Additionally for corner cases it is extremely important that \texttt(add(N)) \equiv \texttt(add(N)) otherwise we cannot say that the function is correct.
+Additionally for corner cases it is extremely important that \texttt{add(N)} \equiv \texttt{add(N)} otherwise we cannot say that the function is correct.
 
 *** Pit falls of Unit Test
 
 Here we will briefly discuss corner cases of Unit Testing
 
-**** Over testing 
+**** Over testing and 100% Test Coverage \neq Perfect Testing
+
+One of the things that is common requirement from managers is 100% test coverage however, this is not always a good approach.
+For the simple reason that it can increase the size of the code base for no reason and test code that is so trivial that it is just a waste of time.
+
+As an example let us assume we have the class
+
+#+BEGIN_SRC cpp
+  class Person
+  {
+  public:    
+      Person(first_name, last_name) : _first_name(first_name), _last_name(last_name) {}
+
+      std::string first_name() const { return _first_name; }
+      std::string last_name() const { return _last_name; }
+
+      std::String full_name() const {return _first_name + " " + _last_name; }
+  private:
+      std::string _first_name;
+      std::string _last_name;
+  };
+
+#+END_SRC
+
 
 *** Test of Functions with side effects
 
