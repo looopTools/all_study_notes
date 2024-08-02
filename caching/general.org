@@ -1,0 +1,20 @@
+#+TITLE: General Notes on Caching
+
+This document describes the general concept of caching.
+
+* What is Caching?
+
+Caching is the prospect of keeping "popular" data readily available for quick access.
+With popular data is meant data that is often access or the newest data.
+
+* Why is it used?
+
+We use it to reduce the response time for request in our Systems
+
+
+* What different types of caches exists
+
+- Most recently used
+- Most often accessed
+- Most recently created
+- LRU: Least recently used cached
